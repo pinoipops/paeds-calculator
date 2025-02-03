@@ -19,5 +19,5 @@ Two essential tools for pediatric medication management:
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/pediatric-calculators.git
+git clone https://github.com/pinoipops/pediatric-calculators.git
 cd pediatric-calculators
