@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+}
+
+body {
+    background: #f0f2f5;
+    padding: 20px;
+}
+
+.calculator-card {
+    background: white;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.icon svg {
+    width: 30px;
+    height: 30px;
+    color: #4CAF50;
+}
+
+.header-title {
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+}
+
+.header-subtitle {
+    font-size: 14px;
+    color: #666;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+    font-weight: 500;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+.error {
+    color: #d32f2f;
+    background: #ffebee;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: none;
+}
+
+.result-container {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.favorites-section {
+    margin-bottom: 20px;
+}
+
+.favorites-section button {
+    margin: 5px;
+    padding: 8px 15px;
+    background: #2196F3;
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toggle-button {
+    background: #2196F3;
+    margin-top: 15px;
+}
+
+.medication-generic {
+    font-size: 0.9em;
+    color: #666;
+    font-style: italic;
+}
+
+@media (max-width: 480px) {
+    .calculator-card {
+        padding: 15px;
+    }
+    
+    .header-title {
+        font-size: 20px;
+    }
+    
+    .radio-group {
+        flex-direction: column;
+    }
+}

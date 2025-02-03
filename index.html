@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pediatric Dose Calculators</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Weight-Based Calculator -->
+    <div class="calculator-card">
+        <div class="card-header">
+            <div class="icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                </svg>
+            </div>
+            <div>
+                <h1 class="header-title">Pediatric Weight-Dose Calculator</h1>
+                <div class="header-subtitle">by Esphynol JAMALUDDIN</div>
+            </div>
+        </div>
+
+        <div class="card-content">
+            <div class="favorites-section">
+                <strong>Favorites:</strong>
+                <button onclick="quickSelect('paracetamol')">Paracetamol</button>
+                <button onclick="quickSelect('amoxClav')">Augmentin</button>
+                <button onclick="quickSelect('azithromycin')">Azithromycin</button>
+            </div>
+
+            <div class="input-group">
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" min="0" step="0.1" placeholder="Enter weight" onkeydown="handleKeyDown(event)">
+            </div>
+
+            <div class="input-group">
+                <label>Medication</label>
+                <select id="medication" onchange="updateStrengthOptions()">
+                    <option value="">Choose medication...</option>
+                    <option value="paracetamol">Paracetamol (Acetaminophen)</option>
+                    <option value="amoxClav">Amoxicillin + Clavulanate (Augmentin)</option>
+                    <option value="azithromycin">Azithromycin</option>
+                    <option value="erythromycin">Erythromycin</option>
+                    <option value="cephalexin">Cephalexin (Keflex)</option>
+                    <option value="prednisolone">Prednisolone</option>
+                </select>
+            </div>
+
+            <div id="strengthContainer" class="input-group hidden">
+                <label>Strength</label>
+                <select id="strength"></select>
+            </div>
+
+            <div id="dosingContainer" class="input-group hidden">
+                <label>Dosing</label>
+                <select id="dosing"></select>
+            </div>
+
+            <button onclick="calculateDose()">Calculate Dose</button>
+            <div id="error1" class="error"></div>
+            <div id="result1" class="result-container"></div>
+        </div>
+    </div>
+
+    <!-- Custom Calculator -->
+    <div class="calculator-card">
+        <div class="card-header">
+            <div class="icon">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                </svg>
+            </div>
+            <div>
+                <h1 class="header-title">Personalized Regimen Builder</h1>
+                <div class="header-subtitle">by Esphynol JAMALUDDIN</div>
+            </div>
+        </div>
+
+        <div class="card-content">
+            <div class="input-group">
+                <label for="medicationCustom">Medication</label>
+                <select id="medicationCustom" onchange="updateAgeGroups()">
+                    <option value="">Choose medication...</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Age Group</label>
+                <div class="radio-group" id="ageGroup">
+                    <label class="radio-option"><input type="radio" name="age" value="2-5"> 2-5 Years</label>
+                    <label class="radio-option"><input type="radio" name="age" value="6-12"> 6-12 Years</label>
+                    <label class="radio-option"><input type="radio" name="age" value="12+"> 12+ Years</label>
+                </div>
+            </div>
+
+            <button onclick="calculateCustomDose()">Calculate</button>
+            <div id="error2" class="error"></div>
+            <div id="result2" class="result-container"></div>
+
+            <button class="toggle-button" onclick="toggleMedicationBox()">Add Medication</button>
+            
+            <div id="medicationBox" class="hidden">
+                <div class="input-group">
+                    <input type="text" id="newMedName" placeholder="Brand name (Generic name)">
+                </div>
+                <div class="input-group">
+                    <input type="text" id="dose2-5" placeholder="Dose for 2-5 years">
+                </div>
+                <div class="input-group">
+                    <input type="text" id="dose6-12" placeholder="Dose for 6-12 years">
+                </div>
+                <div class="input-group">
+                    <input type="text" id="dose12+" placeholder="Dose for 12+ years">
+                </div>
+                <button onclick="saveCustomMedication()">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
