@@ -8,6 +8,8 @@ Two essential tools for pediatric medication management:
 1. **Pediatric Weight-Dose Calculator** - Precise weight-based dosing for common medications
 2. **Personalized Regimen Builder** - Custom treatment plan creator for complex cases
 
+![Screenshot](screenshot.png) <!-- Add a screenshot later -->
+
 ## Features
 
 - 🍼 Weight-based dosage calculations (3-100kg range)
