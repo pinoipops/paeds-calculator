@@ -1,4 +1,4 @@
-# Pediatric Medication Calculators
+# Paediatric Rx Calculator
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/yourusername/pediatric-calculators/pulls)
@@ -19,5 +19,5 @@ Two essential tools for pediatric medication management:
 ## Installation
 
 ```bash
-git clone https://github.com/pinoipops/pediatric-calculators.git
+git clone https://github.com/pinoipops/paeds-calculator.git
 cd pediatric-calculators
